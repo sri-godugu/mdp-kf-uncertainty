@@ -4,8 +4,8 @@ This project demonstrates how open-loop perception noise can destabilize downstr
 
 ## Motivation
 Autonomous driving operates under partial observability:
-    Sensors provide noisy, incomplete measurements of the world
-    Decisions are often made near safety-critical thresholds (e.g., braking distance)
+- Sensors provide noisy, incomplete measurements of the world
+- Decisions are often made near safety-critical thresholds (e.g., braking distance)
 A common failure mode is not gross inaccuracy, but decision instability:
     small measurement noise causes repeated switching between actions (e.g., brake / no-brake).
 This project shows that belief-state estimation (rather than raw perception) is essential for stable and safe decision-making.
