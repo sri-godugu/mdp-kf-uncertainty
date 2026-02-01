@@ -1,9 +1,14 @@
 # MDP + Kalman Filtering: How Open-Loop Perception Uncertainty Impacts Decisions
 
-This project demonstrates, in a minimal and reproducible way, how noisy open-loop perception can lead to unstable or late decisions in autonomy, and how belief-state estimation (Kalman filtering) can mitigate this.
+This project demonstrates how open-loop perception noise can destabilize downstream decision-making in autonomy, and how belief-state estimation using Kalman filtering restores temporal consistency. Using a minimal 1D vehicle motion model, we compare decisions made from raw observations versus filtered belief states, and quantify decision instability under increasing sensor noise.
 
 ## Motivation
-Autonomous driving is partially observable: sensors provide noisy, incomplete observations of the true world state. If downstream decision-making relies directly on noisy observations (open-loop perception), errors can propagate into unsafe actions.
+Autonomous driving operates under partial observability:
+    Sensors provide noisy, incomplete measurements of the world
+    Decisions are often made near safety-critical thresholds (e.g., braking distance)
+A common failure mode is not gross inaccuracy, but decision instability:
+    small measurement noise causes repeated switching between actions (e.g., brake / no-brake).
+This project shows that belief-state estimation (rather than raw perception) is essential for stable and safe decision-making.
 
 ## What this repo contains
 - A simple 1D vehicle motion model (state = position, velocity)
