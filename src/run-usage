@@ -1,3 +1,4 @@
-```bash
+## To run
 
+```bash
 python -m src.experiments
